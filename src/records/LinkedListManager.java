@@ -109,4 +109,27 @@ public boolean deleteStudent(String id) {
     return false;
 }
 
+public void displayAll() {
+
+    if (head == null) {
+        System.out.println(
+            "No records found in Linked List."
+        );
+        return;
+    }
+
+    Node temp = head;
+
+    System.out.println(
+        "\n--- All Student Records (Linked List) ---"
+    );
+
+    while (temp != null) {
+
+        System.out.println(temp.data);
+
+        temp = temp.next;
+    }
+}
+
 }
