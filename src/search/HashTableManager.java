@@ -19,4 +19,15 @@ public class HashTableManager {
     public HashTableManager() {
         table = new HashNode[CAPACITY];
     }
+
+    private int hashFunction(String id) {
+    int hash = 0;
+
+    for (char c : id.toCharArray()) {
+        hash += c;
+    }
+
+    return Math.abs(hash) % CAPACITY;
+}
+
 }
