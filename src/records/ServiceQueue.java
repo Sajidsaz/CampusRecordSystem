@@ -25,4 +25,16 @@ public class ServiceQueue {
         rear.next = newNode;
         rear = newNode;
     }
+
+    public String dequeue() {
+    if (front == null) return null;
+
+    String request = front.request;
+    front = front.next;
+
+    if (front == null) rear = null;
+
+    return request;
+}
+
 }
