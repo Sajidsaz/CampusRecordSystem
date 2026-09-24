@@ -54,61 +54,100 @@ public class Main {
             switch (choice) {
                 
                 case 1:
-    System.out.print("Enter Student ID: ");
-    String id = sc.nextLine().trim();
-    System.out.print("Enter Name: ");
-    String name = sc.nextLine().trim();
-    System.out.print("Enter Programme: ");
-    String prog = sc.nextLine().trim();
-    System.out.print("Enter Marks (0-100): ");
-    double marks = readDouble(sc, 0, 100);
+                    System.out.print("Enter Student ID: ");
+                    String id = sc.nextLine().trim();
+                    System.out.print("Enter Name: ");
+                    String name = sc.nextLine().trim();
+                    System.out.print("Enter Programme: ");
+                    String prog = sc.nextLine().trim();
+                    System.out.print("Enter Marks (0-100): ");
+                    double marks = readDouble(sc, 0, 100);
 
-    Student newStudent = new Student(id, name, prog, marks);
-    if (listManager.addStudent(newStudent)) {
-        bstManager.insert(newStudent);
-        hashManager.insert(newStudent);
-        actionStack.push("Added Student Record: ID " + id);
-        System.out.println("Student record added successfully.");
-    } else {
-        System.out.println("Error: Student ID already exists!");
-    }
-    break;
+                    Student newStudent = new Student(id, name, prog, marks);
+                    if (listManager.addStudent(newStudent)) {
+                        bstManager.insert(newStudent);
+                        hashManager.insert(newStudent);
+                        actionStack.push("Added Student Record: ID " + id);
+                        System.out.println("Student record added successfully.");
+                    } else {
+                        System.out.println("Error: Student ID already exists!");
+                    }
+                    break;
 
-case 2:
-    System.out.print("Enter Student ID to Update: ");
-    String uid = sc.nextLine().trim();
-    if (listManager.search(uid) == null) {
-        System.out.println("Error: Student record not found.");
-        break;
-    }
-    System.out.print("Enter New Name: ");
-    String uName = sc.nextLine().trim();
-    System.out.print("Enter New Programme: ");
-    String uProg = sc.nextLine().trim();
-    System.out.print("Enter New Marks (0-100): ");
-    double uMarks = readDouble(sc, 0, 100);
+                case 2:
+                    System.out.print("Enter Student ID to Update: ");
+                    String uid = sc.nextLine().trim();
+                    if (listManager.search(uid) == null) {
+                        System.out.println("Error: Student record not found.");
+                        break;
+                    }
+                    System.out.print("Enter New Name: ");
+                    String uName = sc.nextLine().trim();
+                    System.out.print("Enter New Programme: ");
+                    String uProg = sc.nextLine().trim();
+                    System.out.print("Enter New Marks (0-100): ");
+                    double uMarks = readDouble(sc, 0, 100);
 
-    listManager.updateStudent(uid, uName, uProg, uMarks);
-    actionStack.push("Updated Student Record: ID " + uid);
-    System.out.println("Student updated successfully.");
-    break;
+                    listManager.updateStudent(uid, uName, uProg, uMarks);
+                    actionStack.push("Updated Student Record: ID " + uid);
+                    System.out.println("Student updated successfully.");
+                    break;
 
-case 3:
-    System.out.print("Enter Student ID to Delete: ");
-    String did = sc.nextLine().trim();
-    if (listManager.deleteStudent(did)) {
-        actionStack.push("Deleted Student Record: ID " + did);
-        System.out.println("Student record deleted from Linked List.");
-    } else {
-        System.out.println("Error: Student ID not found.");
-    }
-    break;
+                case 3:
+                    System.out.print("Enter Student ID to Delete: ");
+                    String did = sc.nextLine().trim();
+                    if (listManager.deleteStudent(did)) {
+                        actionStack.push("Deleted Student Record: ID " + did);
+                        System.out.println("Student record deleted from Linked List.");
+                    } else {
+                        System.out.println("Error: Student ID not found.");
+                    }
+                    break;
 
-case 4:
-    listManager.displayAll();
-    break;
+                case 4:
+                    listManager.displayAll();
+                    break;
 
-            }
-        }
-    }
+                case 5:
+                    System.out.print("Enter Service Request Description: ");
+                    String req = sc.nextLine().trim();
+                    serviceQueue.enqueue(req);
+                    actionStack.push("Enqueued Request: " + req);
+                    System.out.println("Service request added to queue.");
+                    break;
+
+                case 6:
+                    String processed = serviceQueue.dequeue();
+                    if (processed != null) {
+                        actionStack.push("Processed Request: " + processed);
+                        System.out.println("Processed Request: " + processed);
+                    } else {
+                        System.out.println("Queue is empty. No requests to process.");
+                    }
+                    break;
+
+                case 7:
+                    actionStack.displayHistory();
+                    break;
+
+                case 8:
+                    bstManager.displayInOrder();
+                    break;
+
+                case 9:
+                    System.out.print("Enter Student ID to Search (HashTable): ");
+                    String hid = sc.nextLine().trim();
+                    Student found = hashManager.search(hid);
+                    if (found != null) {
+                        System.out.println("Found Record: " + found);
+                    } else {
+                        System.out.println("Record not found in Hash Table.");
+                    }
+                    break;
+
+
+                            }
+                        }
+                    }
+                
 }
