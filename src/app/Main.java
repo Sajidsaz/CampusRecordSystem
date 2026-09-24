@@ -20,7 +20,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        
         campusGraph.addLocation("MAIN GATE");
         campusGraph.addLocation("LIBRARY");
         campusGraph.addLocation("AUDITORIUM");
@@ -52,7 +52,6 @@ public class Main {
             int choice = readInt(sc);
 
             switch (choice) {
-                
                 case 1:
                     System.out.print("Enter Student ID: ");
                     String id = sc.nextLine().trim();
@@ -218,10 +217,31 @@ public class Main {
 
                 default:
                     System.out.println("Invalid option! Please enter a number between 1 and 16.");
+            }
+        }
+    }
 
+    private static int readInt(Scanner sc) {
+        while (true) {
+            try {
+                String line = sc.nextLine().trim();
+                return Integer.parseInt(line);
+            } catch (NumberFormatException e) {
+                System.out.print("Invalid input. Please enter a valid integer: ");
+            }
+        }
+    }
 
-                            }
-                        }
-                    }
-                
+    private static double readDouble(Scanner sc, double min, double max) {
+        while (true) {
+            try {
+                String line = sc.nextLine().trim();
+                double val = Double.parseDouble(line);
+                if (val >= min && val <= max) return val;
+                System.out.print("Value out of range (" + min + "-" + max + "). Re-enter: ");
+            } catch (NumberFormatException e) {
+                System.out.print("Invalid input. Please enter a valid number: ");
+            }
+        }
+    }
 }
