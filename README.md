@@ -1,7 +1,7 @@
 # University Student Record and Campus Route Management System
 
 **Module:** CIT300 - Data Structures and Algorithms  
-**Assignment:**Practical Assignment 1
+**Assignment:** Practical Assignment 1
 **University:** SLTC Research University  
 
 ---
