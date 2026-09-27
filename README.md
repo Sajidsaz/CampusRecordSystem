@@ -1,7 +1,7 @@
 # University Student Record and Campus Route Management System
 
-**Module:** CIT300 – Data Structures and Algorithms  
-**Assignment:** Graded Practical Assignment 1 (Week 10)  
+**Module:** CIT300 - Data Structures and Algorithms  
+**Assignment:**Practical Assignment 1
 **University:** SLTC Research University  
 
 ---
@@ -22,7 +22,7 @@ The system manages university student records and models campus locations as a c
 The application provides a menu-driven interface that allows users to manage student records, process service requests, view recent actions, search and display students using different data structures, and manage campus locations and routes.
 
 ---
-
+## Group No : **47**
 ## 2. Team Members
 
 | Member | Name | Student ID | Responsibility | Individual Contribution |
