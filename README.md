@@ -126,7 +126,6 @@ A `Student` object is inserted into the linked list and is also referenced by th
 ```text
 CampusRecordSystem/
 ├── bin/
-├── lib/
 ├── src/
 │   ├── app/
 │   │   └── Main.java
@@ -141,7 +140,6 @@ CampusRecordSystem/
 │   └── search/
 │       ├── BSTManager.java
 │       └── HashTableManager.java
-├── .gitignore
 └── README.md
 ```
 
