@@ -421,22 +421,6 @@ Possible improvements include:
 
 ---
 
-## 15. Demonstration Video
-
-**Video Link:**  
-`[Add the merged group demonstration video link here]`
-
-Each member should explain and demonstrate the part they personally implemented.
-
-Suggested order:
-
-1. **Member 1** — Student model and Linked List
-2. **Member 2** — Stack and Queue
-3. **Member 3** — BST and Hash Table
-4. **Member 4** — Campus Graph, BFS/DFS, Main integration and final system demonstration
-
----
-
 ## 16. Conclusion
 
 The University Student Record and Campus Route Management System demonstrates how multiple data structures can be combined within one Java application.
